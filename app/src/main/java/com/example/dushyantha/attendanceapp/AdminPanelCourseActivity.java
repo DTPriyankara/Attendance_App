@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class AdminPanelStudentActivity extends AppCompatActivity {
+public class AdminPanelCourseActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -39,7 +39,7 @@ public class AdminPanelStudentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_panel_student);
+        setContentView(R.layout.admin_panel_course);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -68,11 +68,10 @@ public class AdminPanelStudentActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_admin_panel_student, menu);
+        getMenuInflater().inflate(R.menu.menu_admin_panel_course, menu);
         return true;
     }
 
@@ -91,7 +90,6 @@ public class AdminPanelStudentActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -104,18 +102,18 @@ public class AdminPanelStudentActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            switch (position) {
+            switch(position){
                 case 0:
-                    StudentAdd tab1 = new StudentAdd();
+                    CourseAdd tab1 = new CourseAdd();
                     return tab1;
                 case 1:
-                    StudentView tab2 = new StudentView();
+                    CourseView tab2 = new CourseView();
                     return tab2;
                 case 2:
-                    StudentUpdate tab3 = new StudentUpdate();
+                    CourseUpdate tab3 = new CourseUpdate();
                     return tab3;
                 case 3:
-                    StudentDelete tab4 = new StudentDelete();
+                    CourseDelete tab4 = new CourseDelete();
                     return tab4;
                 default:
                     return null;
@@ -130,7 +128,7 @@ public class AdminPanelStudentActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position){
-            switch (position){
+            switch(position){
                 case 0:
                     return "ADD";
                 case 1:
@@ -139,6 +137,7 @@ public class AdminPanelStudentActivity extends AppCompatActivity {
                     return "UPDATE";
                 case 3:
                     return "DELETE";
+
             }
             return null;
         }
